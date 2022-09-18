@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/upper_layout"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/middle_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView_top_left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textView_top_middle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textView_top_right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/middle_layout"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/bottom_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upper_layout">
+
+        <TextView
+            android:id="@+id/textView_middle_upper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textView_middle_middle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textView_middle_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/middle_layout">
+
+        <TextView
+            android:id="@+id/textView_bottom_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="4dp"
+            android:paddingHorizontal="32dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@id/textView_bottom_right"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_bottom_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="64dp"
+            android:paddingHorizontal="32dp"
+            android:textAlignment="center"
+            app:layout_constraintBaseline_toBaselineOf="@id/textView_bottom_left"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textView_bottom_left" />
+
+        <TextView
+            android:id="@+id/textView_bottom_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="32dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@id/textView_bottom_right"
+            app:layout_constraintStart_toStartOf="@id/textView_bottom_left"
+            app:layout_constraintTop_toBottomOf="@id/textView_bottom_left" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/button_roll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_roll"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bottom_layout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
