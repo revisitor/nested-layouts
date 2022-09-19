@@ -31,26 +31,26 @@ class MainActivity : AppCompatActivity() {
             )
         ).map { it.map(::findViewById) }
 
-        putCounter()
+        putCounterInActiveTextViews()
         findViewById<Button>(R.id.button_roll).setOnClickListener {
             counter++
-            switchTextViews()
+            switchCurrentTextViews()
         }
     }
 
-    private fun putCounter() = setCurrent(counter.toString())
+    private fun putCounterInActiveTextViews() = setTextInCurrentTextViews(counter.toString())
 
-    private fun setCurrent(input: String) {
+    private fun setTextInCurrentTextViews(input: String) {
         for (textView in textViews[currentIndex]) {
             textView.text = input
         }
     }
 
-    private fun switchTextViews() {
-        clearCurrent()
+    private fun switchCurrentTextViews() {
+        clearCurrentTextViews()
         currentIndex = (currentIndex + 1) % textViews.size
-        putCounter()
+        putCounterInActiveTextViews()
     }
 
-    private fun clearCurrent() = setCurrent("")
+    private fun clearCurrentTextViews() = setTextInCurrentTextViews("")
 }
